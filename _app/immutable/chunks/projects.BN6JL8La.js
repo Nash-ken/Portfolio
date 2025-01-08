@@ -1,1 +1,0 @@
-import{g as o,w as c}from"./index.6I2Q_Dgp.js";const n=c([]);function s(t){const r=o(n).find(e=>e.id===t);if(!r)throw new Error(`Project with id ${t} not found`);return r}function a(){return o(n).length}export{a as L,s as g,n as p};
