@@ -3,19 +3,20 @@
     import Icon from '@iconify/svelte';
     import { cubicInOut } from 'svelte/easing';
     import { slide } from 'svelte/transition';
+    import { base } from '$app/paths';
 
     let { mobile } : { mobile: boolean } = $props();
     let currentPath: string = $derived(page.url.pathname);
 
     const pages = [
-        {page: 'Explore', path: '/', icon: "lucide:compass"},
-        {page: 'Projects', path: '/projects', icon: "lucide:blocks"},
-        {page: 'Career', path: '/career', icon: "lucide:briefcase"},
-        {page: 'About', path: '/about', icon: "lucide:user"}
+        {page: 'Explore', path: `${base}/`, icon: "lucide:compass"},
+        {page: 'Projects', path: `${base}/projects`, icon: "lucide:blocks"},
+        {page: 'Career', path: `${base}/career`, icon: "lucide:briefcase"},
+        {page: 'About', path: `${base}/about`, icon: "lucide:user"}
     ];
     
     function isActive(path: string) {
-		return path === currentPath;
+		return path === currentPath || currentPath.startsWith(path + "/");
 	}
 </script>
 

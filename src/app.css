@@ -6,7 +6,23 @@
   body {
     background-color: theme(colors.background);
     color: theme(colors.text);
+    overflow-x: hidden;
     @apply font-Jakarta;
+
+    
+  }
+  ::-webkit-scrollbar {
+    display: contents;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: theme(colors.primary);
+    border-radius: 100px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: theme(colors.transparent);
   }
 }
 
@@ -17,5 +33,6 @@
     max-width: 900px;
     margin-inline: auto;
     padding-inline: 1rem;
+    overflow-x: hidden;
   }
 }
